@@ -1,0 +1,1 @@
+import './ssr-init.js';
