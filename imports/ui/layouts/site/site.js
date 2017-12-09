@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from '/imports/ui/pages/home/home.js';
 import NotFoundPage from '/imports/ui/pages/notFound/notFound.js';
 
+import './site.scss';
+
 class SiteLayout extends Component {
 
   render() {
