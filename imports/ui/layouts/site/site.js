@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 import HomePage from '/imports/ui/pages/home/home.js';
 import NotFoundPage from '/imports/ui/pages/notFound/notFound.js';
@@ -9,6 +10,9 @@ class SiteLayout extends Component {
   render() {
     return (
       <div className="site-container">
+        <Helmet>
+          <title>Site layout</title>
+        </Helmet>
         <div className="header-container">
         </div>
         <div className="row body-container">
