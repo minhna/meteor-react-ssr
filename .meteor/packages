@@ -19,3 +19,4 @@ server-render@0.2.0
 materialize:materialize
 fourseven:scss
 juliancwirko:postcss
+dynamic-import
