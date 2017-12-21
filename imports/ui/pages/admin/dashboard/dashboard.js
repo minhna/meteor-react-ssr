@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import moment from 'moment';
 
 class AdminDashboardPage extends Component {
-
-  render(){
+  render() {
     return (
       <div>
-        {moment().format("DD/MM/YYYY")}
+        {moment().format('DD/MM/YYYY')}
       </div>
-    )
+    );
   }
 }
 

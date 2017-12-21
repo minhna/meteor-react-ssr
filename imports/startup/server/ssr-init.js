@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { onPageLoad } from 'meteor/server-render';
 import { StaticRouter } from 'react-router';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 import routes from '../both/routes.js';
 
