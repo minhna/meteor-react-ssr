@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Helmet } from "react-helmet";
+import Loadable from 'react-loadable';
 
-import HomePage from '/imports/ui/pages/home/home.js';
+import Loading from '/imports/ui/components/loading.js';
+
+const LoadableHomePage = Loadable({
+  loader: () => import('/imports/ui/pages/home/home.js'),
+  loading: Loading,
+  delay: 200
+});
+
 import NotFoundPage from '/imports/ui/pages/notFound/notFound.js';
 
 class SiteLayout extends Component {
@@ -17,7 +25,7 @@ class SiteLayout extends Component {
         </div>
         <div className="row body-container">
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/" component={LoadableHomePage} />
             <Route component={NotFoundPage} />
           </Switch>
         </div>
