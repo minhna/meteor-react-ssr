@@ -11,12 +11,12 @@ import Loading from '/imports/ui/components/loading.js';
 const LoadableAdminLayout = Loadable({
   loader: () => import('/imports/ui/layouts/admin/admin.js'),
   loading: Loading,
-  delay: 200
+  delay: 200,
 });
 const LoadableSiteLayout = Loadable({
   loader: () => import('/imports/ui/layouts/site/site.js'),
   loading: Loading,
-  delay: 200
+  delay: 200,
 });
 
 export default (

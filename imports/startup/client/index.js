@@ -11,7 +11,7 @@ const App = () => (
       {routes}
     </Switch>
   </BrowserRouter>
-)
+);
 
 onPageLoad(() => {
   ReactDOM.hydrate(<App />, document.getElementById('app'));

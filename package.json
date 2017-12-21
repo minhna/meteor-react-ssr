@@ -2,7 +2,9 @@
   "name": "server-render",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "lint": "eslint .",
+    "pretest": "npm run lint --silent"
   },
   "dependencies": {
     "autoprefixer": "^7.2.2",
@@ -20,7 +22,17 @@
     "react-loadable": "^5.3.1",
     "react-router-dom": "^4.2.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@meteorjs/eslint-config-meteor": "^1.0.5",
+    "babel-eslint": "^8.0.3",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-meteor": "^4.1.4",
+    "eslint-plugin-react": "^7.5.1"
+  },
   "postcss": {
     "plugins": {
       "postcss-easy-import": {
@@ -38,5 +50,17 @@
       }
     },
     "parser": "postcss-scss"
+  },
+  "eslintConfig": {
+    "extends": "@meteorjs/eslint-config-meteor",
+    "rules": {
+      "semi": 2,
+      "jsx-a11y/anchor-is-valid": [ "error", {
+        "components": [ "Link" ],
+        "specialLink": [ "hrefLeft", "hrefRight", "to" ],
+        "aspects": [ "noHref", "invalidHref", "preferButton" ]
+      }],
+      "class-methods-use-this": [0, { "exceptMethods": [] }]
+    }
   }
 }
