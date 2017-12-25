@@ -12,6 +12,12 @@ const LoadableHomePage = Loadable({
   delay: 200,
 });
 
+const LoadableTestPage = Loadable({
+  loader: () => import('/imports/ui/pages/test/test.js'),
+  loading: Loading,
+  delay: 200,
+});
+
 class SiteLayout extends Component {
   render() {
     return (
@@ -23,6 +29,7 @@ class SiteLayout extends Component {
         <div className="row body-container">
           <Switch>
             <Route exact path="/" component={LoadableHomePage} />
+            <Route exact path="/test" component={LoadableTestPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </div>
