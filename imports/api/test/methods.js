@@ -22,9 +22,11 @@ Meteor.methods({
     validationContext.validate(data);
     if (validationContext.isValid()) {
       // do something
+      console.log('valid');
     }
     if (validationContext.validationErrors()) {
       // do something
+      console.log(validationContext.validationErrors());
     }
 
     return 'finished';
