@@ -20,7 +20,8 @@
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
     "react-loadable": "^5.3.1",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "simpl-schema": "^1.3.0"
   },
   "devDependencies": {
     "@meteorjs/eslint-config-meteor": "^1.0.5",
@@ -55,12 +56,30 @@
     "extends": "@meteorjs/eslint-config-meteor",
     "rules": {
       "semi": 2,
-      "jsx-a11y/anchor-is-valid": [ "error", {
-        "components": [ "Link" ],
-        "specialLink": [ "hrefLeft", "hrefRight", "to" ],
-        "aspects": [ "noHref", "invalidHref", "preferButton" ]
-      }],
-      "class-methods-use-this": [0, { "exceptMethods": [] }]
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          "components": [
+            "Link"
+          ],
+          "specialLink": [
+            "hrefLeft",
+            "hrefRight",
+            "to"
+          ],
+          "aspects": [
+            "noHref",
+            "invalidHref",
+            "preferButton"
+          ]
+        }
+      ],
+      "class-methods-use-this": [
+        0,
+        {
+          "exceptMethods": []
+        }
+      ]
     }
   }
 }
