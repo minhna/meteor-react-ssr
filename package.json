@@ -53,6 +53,10 @@
     "parser": "postcss-scss"
   },
   "eslintConfig": {
+    "env": {
+      "node": true,
+      "jquery": true
+    },
     "extends": "@meteorjs/eslint-config-meteor",
     "rules": {
       "semi": 2,
