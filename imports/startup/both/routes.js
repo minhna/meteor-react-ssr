@@ -3,8 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
 import MainComponent from '/imports/ui/components/main.js';
-// import SiteLayout from '/imports/ui/layouts/site/site.js';
-// import AdminLayout from '/imports/ui/layouts/admin/admin.js';
 
 import Loading from '/imports/ui/components/loading.js';
 

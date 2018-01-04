@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Loadable from 'react-loadable';
@@ -18,25 +18,21 @@ const LoadableTestPage = Loadable({
   delay: 200,
 });
 
-class SiteLayout extends Component {
-  render() {
-    return (
-      <div className="site-container">
-        <Helmet>
-          <title>Site layout</title>
-        </Helmet>
-        <div className="header-container" />
-        <div className="row body-container">
-          <Switch>
-            <Route exact path="/" component={LoadableHomePage} />
-            <Route exact path="/test" component={LoadableTestPage} />
-            <Route component={NotFoundPage} />
-          </Switch>
-        </div>
-        <div className="footer-container" />
-      </div>
-    );
-  }
-}
+const SiteLayout = () => (
+  <div className="site-container">
+    <Helmet>
+      <title>Site layout</title>
+    </Helmet>
+    <div className="header-container" />
+    <div className="row body-container">
+      <Switch>
+        <Route exact path="/" component={LoadableHomePage} />
+        <Route exact path="/test" component={LoadableTestPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
+    </div>
+    <div className="footer-container" />
+  </div>
+);
 
 export default SiteLayout;

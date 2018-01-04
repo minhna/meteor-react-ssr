@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Loadable from 'react-loadable';
@@ -12,24 +12,20 @@ const LoadableDashboardPage = Loadable({
   delay: 200,
 });
 
-class AdminLayout extends Component {
-  render() {
-    return (
-      <div className="site-container">
-        <Helmet>
-          <title>Admin layout</title>
-        </Helmet>
-        <div className="header-container" />
-        <div className="row body-container">
-          <Switch>
-            <Route exact path="/admin" component={LoadableDashboardPage} />
-            <Route component={NotFoundPage} />
-          </Switch>
-        </div>
-        <div className="footer-container" />
-      </div>
-    );
-  }
-}
+const AdminLayout = () => (
+  <div className="site-container">
+    <Helmet>
+      <title>Admin layout</title>
+    </Helmet>
+    <div className="header-container" />
+    <div className="row body-container">
+      <Switch>
+        <Route exact path="/admin" component={LoadableDashboardPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
+    </div>
+    <div className="footer-container" />
+  </div>
+);
 
 export default AdminLayout;
