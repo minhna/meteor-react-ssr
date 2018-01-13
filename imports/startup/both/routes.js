@@ -10,11 +10,13 @@ const LoadableAdminLayout = Loadable({
   loader: () => import('/imports/ui/layouts/admin/admin.js'),
   loading: Loading,
   delay: 200,
+  serverSideRequirePath: '/imports/ui/layouts/admin/admin.js',
 });
 const LoadableSiteLayout = Loadable({
   loader: () => import('/imports/ui/layouts/site/site.js'),
   loading: Loading,
   delay: 200,
+  serverSideRequirePath: '/imports/ui/layouts/site/site.js',
 });
 
 export default (

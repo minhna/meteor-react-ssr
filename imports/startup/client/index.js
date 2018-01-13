@@ -4,18 +4,16 @@ import { Router, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import { onPageLoad } from 'meteor/server-render';
 
-import routes from '../both/routes.js';
-
 const history = createHistory();
 
-const App = () => (
-  <Router history={history}>
-    <Switch>
-      {routes}
-    </Switch>
-  </Router>
-);
-
-onPageLoad(() => {
+onPageLoad(async () => {
+  const routes = (await import('../both/routes.js')).default;
+  const App = () => (
+    <Router history={history}>
+      <Switch>
+        {routes}
+      </Switch>
+    </Router>
+  );
   ReactDOM.hydrate(<App />, document.getElementById('app'));
 });

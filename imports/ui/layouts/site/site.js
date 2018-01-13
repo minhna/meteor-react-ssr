@@ -10,12 +10,14 @@ const LoadableHomePage = Loadable({
   loader: () => import('/imports/ui/pages/home/home.js'),
   loading: Loading,
   delay: 200,
+  serverSideRequirePath: '/imports/ui/pages/home/home.js',
 });
 
 const LoadableTestPage = Loadable({
   loader: () => import('/imports/ui/pages/test/test.js'),
   loading: Loading,
   delay: 200,
+  serverSideRequirePath: '/imports/ui/pages/test/test.js',
 });
 
 const SiteLayout = () => (
