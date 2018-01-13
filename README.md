@@ -18,3 +18,6 @@ kind of boilerplate
 - Run the meteor app: `meteor npm start`
 
 I created a `/test` page to test a couple of useful stuffs.
+
+## demo
+http://meteor-ssr-loadable.minhnguyen.me/
