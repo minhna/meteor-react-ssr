@@ -10,6 +10,7 @@ const LoadableDashboardPage = Loadable({
   loader: () => import('/imports/ui/pages/admin/dashboard/dashboard.js'),
   loading: Loading,
   delay: 200,
+  serverSideRequirePath: '/imports/ui/pages/admin/dashboard/dashboard.js',
 });
 
 const AdminLayout = () => (
