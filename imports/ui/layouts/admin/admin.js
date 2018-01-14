@@ -1,15 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import Loadable from 'react-loadable';
 
-import Loading from '/imports/ui/components/loading.js';
 import NotFoundPage from '/imports/ui/pages/notFound/notFound.js';
+import LoadableWrapper from '/imports/helpers/loadable/LoadableWrapper.js';
 
-const LoadableDashboardPage = Loadable({
+const LoadableDashboardPage = LoadableWrapper({
   loader: () => import('/imports/ui/pages/admin/dashboard/dashboard.js'),
-  loading: Loading,
-  delay: 200,
   serverSideRequirePath: '/imports/ui/pages/admin/dashboard/dashboard.js',
 });
 

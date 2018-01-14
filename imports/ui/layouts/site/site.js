@@ -1,22 +1,16 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import Loadable from 'react-loadable';
 
-import Loading from '/imports/ui/components/loading.js';
 import NotFoundPage from '/imports/ui/pages/notFound/notFound.js';
+import LoadableWrapper from '/imports/helpers/loadable/LoadableWrapper.js';
 
-const LoadableHomePage = Loadable({
+const LoadableHomePage = LoadableWrapper({
   loader: () => import('/imports/ui/pages/home/home.js'),
-  loading: Loading,
-  delay: 200,
   serverSideRequirePath: '/imports/ui/pages/home/home.js',
 });
-
-const LoadableTestPage = Loadable({
+const LoadableTestPage = LoadableWrapper({
   loader: () => import('/imports/ui/pages/test/test.js'),
-  loading: Loading,
-  delay: 200,
   serverSideRequirePath: '/imports/ui/pages/test/test.js',
 });
 

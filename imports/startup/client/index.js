@@ -10,9 +10,7 @@ onPageLoad(async () => {
   const routes = (await import('../both/routes.js')).default;
   const App = () => (
     <Router history={history}>
-      <Switch>
-        {routes}
-      </Switch>
+      {routes}
     </Router>
   );
   ReactDOM.hydrate(<App />, document.getElementById('app'));
