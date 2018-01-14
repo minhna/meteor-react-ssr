@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import NotFoundPage from '/imports/ui/pages/notFound/notFound.js';
-import LoadableWrapper from '/imports/helpers/loadable/LoadableWrapper.js';
+import LoadableWrapper from '/imports/helpers/react-loadable/LoadableWrapper.js';
 
 const LoadableHomePage = LoadableWrapper({
   loader: () => import('/imports/ui/pages/home/home.js'),

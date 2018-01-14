@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Switch } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import { onPageLoad } from 'meteor/server-render';
 
