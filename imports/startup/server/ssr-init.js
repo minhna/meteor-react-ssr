@@ -4,10 +4,10 @@ import { onPageLoad } from 'meteor/server-render';
 import { StaticRouter } from 'react-router';
 import { Helmet } from 'react-helmet';
 
-import routes from '../both/routes.js';
-
-onPageLoad((sink) => {
+onPageLoad(async (sink) => {
   const context = {};
+
+  const routes = (await import('../both/routes.js')).default;
 
   const App = props => (
     <StaticRouter location={props.location} context={context}>
