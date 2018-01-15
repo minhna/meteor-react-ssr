@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { onPageLoad } from 'meteor/server-render';
 import { StaticRouter } from 'react-router';
 import { Helmet } from 'react-helmet';
+import Loadable from 'react-loadable';
 
 onPageLoad(async (sink) => {
   const context = {};
@@ -15,9 +16,21 @@ onPageLoad(async (sink) => {
     </StaticRouter>
   );
 
-  sink.renderIntoElementById('app', renderToString(<App location={sink.request.url} />));
+  Loadable.preloadAll().then(() => {
+    const modules = [];
+    const html = renderToString((
+      <Loadable.Capture report={(moduleName) => { modules.push(moduleName); }}>
+        <App location={sink.request.url} />
+      </Loadable.Capture>
+    ));
 
-  const helmet = Helmet.renderStatic();
-  sink.appendToHead(helmet.meta.toString());
-  sink.appendToHead(helmet.title.toString());
+    // we have a list of modules here, hopefully Meteor will allow to add them to bundle
+    // console.log(modules);
+
+    sink.renderIntoElementById('app', html);
+
+    const helmet = Helmet.renderStatic();
+    sink.appendToHead(helmet.meta.toString());
+    sink.appendToHead(helmet.title.toString());
+  });
 });

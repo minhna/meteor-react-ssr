@@ -7,7 +7,7 @@ import LoadableWrapper from '/imports/helpers/react-loadable/LoadableWrapper.js'
 
 const LoadableDashboardPage = LoadableWrapper({
   loader: () => import('/imports/ui/pages/admin/dashboard/dashboard.js'),
-  serverSideRequirePath: '/imports/ui/pages/admin/dashboard/dashboard.js',
+  modules: ['/imports/ui/pages/admin/dashboard/dashboard.js'],
 });
 
 const AdminLayout = () => (

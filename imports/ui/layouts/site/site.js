@@ -7,11 +7,11 @@ import LoadableWrapper from '/imports/helpers/react-loadable/LoadableWrapper.js'
 
 const LoadableHomePage = LoadableWrapper({
   loader: () => import('/imports/ui/pages/home/home.js'),
-  serverSideRequirePath: '/imports/ui/pages/home/home.js',
+  modules: ['/imports/ui/pages/home/home.js'],
 });
 const LoadableTestPage = LoadableWrapper({
   loader: () => import('/imports/ui/pages/test/test.js'),
-  serverSideRequirePath: '/imports/ui/pages/test/test.js',
+  modules: ['/imports/ui/pages/test/test.js'],
 });
 
 const SiteLayout = () => (
