@@ -4,10 +4,6 @@ import { Mongo } from 'meteor/mongo';
 const Tests = new Mongo.Collection('tests');
 
 Tests.schema = new SimpleSchema({
-  owner: {
-    type: String,
-    label: 'the ID of user this document belongs to.',
-  },
   createdAt: {
     type: String,
     label: 'The date this document was created.',

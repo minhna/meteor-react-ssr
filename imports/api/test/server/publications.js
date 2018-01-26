@@ -2,6 +2,10 @@
 
 import { Meteor } from 'meteor/meteor';
 // import { check, Match } from 'meteor/check';
+
+// for development only
+import { getIndexes, explainQuery } from '/imports/helpers/server/explainQuery.js';
+
 import Tests from '../tests.js';
 
 Meteor.publish('tests.mine', function () {
@@ -16,6 +20,10 @@ Meteor.publish('tests.mine', function () {
   const options = {
     fields: { createdAt: 0 },
   };
+
+  // for development only
+  getIndexes(Tests);
+  explainQuery(Tests, query, options);
 
   return Tests.find(query, options);
 });
