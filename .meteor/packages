@@ -16,8 +16,8 @@ es5-shim@4.7.0                # ECMAScript 5 compatibility for older browsers
 ecmascript@0.10.0              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.3.1            # Server-side component of the `meteor shell` command
 server-render@0.3.0
-materialize:materialize
 fourseven:scss
-juliancwirko:postcss
 dynamic-import@0.3.0
 react-meteor-data
+minifier-css
+juliancwirko:postcss
