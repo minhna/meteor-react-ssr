@@ -69,6 +69,14 @@ class LoginForm extends Component {
     });
   }
 
+  onLoginWithFacebook(e) {
+    e.preventDefault();
+    Meteor.loginWithFacebook({
+      requestPermissions: ['public_profile'],
+      auth_type: 'rerequest',
+    });
+  }
+
   render() {
     if (this.props.loggedIn === true) {
       return (
@@ -134,6 +142,17 @@ class LoginForm extends Component {
                 Register
               </button>
             </div>
+          </div>
+          <div className="row center-align">
+            <div className="col s12 m6">
+              <button
+                className="waves-effect waves-light btn blue"
+                onClick={(e) => { this.onLoginWithFacebook(e); }}
+              >
+                Login with Facebook
+              </button>
+            </div>
+            <div className="col s12 m6"></div>
           </div>
         </form>
       </div>

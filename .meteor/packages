@@ -25,3 +25,5 @@ materialize:materialize
 accounts-base
 accounts-password
 email
+service-configuration
+accounts-facebook
