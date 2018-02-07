@@ -10,6 +10,7 @@
     "@babel/runtime": "^7.0.0-beta.38",
     "autoprefixer": "^7.2.5",
     "babel-runtime": "^6.26.0",
+    "bcrypt": "^1.0.3",
     "history": "^4.7.2",
     "meteor-node-stubs": "^0.3.2",
     "moment": "^2.20.1",
@@ -23,6 +24,7 @@
     "react-helmet": "^5.2.0",
     "react-loadable": "^5.3.1",
     "react-router-dom": "^4.2.2",
+    "react-s-alert": "^1.4.1",
     "simpl-schema": "^1.4.1"
   },
   "devDependencies": {

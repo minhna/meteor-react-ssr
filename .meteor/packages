@@ -21,3 +21,7 @@ dynamic-import@0.3.0
 react-meteor-data
 minifier-css
 juliancwirko:postcss
+materialize:materialize
+accounts-base
+accounts-password
+email

@@ -31,4 +31,5 @@ onPageLoad(async (sink) => {
   const helmet = Helmet.renderStatic();
   sink.appendToHead(helmet.meta.toString());
   sink.appendToHead(helmet.title.toString());
+  sink.appendToHead(helmet.link.toString());
 });
