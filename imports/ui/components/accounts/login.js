@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withTracker } from 'meteor/react-meteor-data';
+import { Accounts } from 'meteor/accounts-base';
 
 import MaterialHelper from '/imports/ui/helpers/materialcss.js';
 import { showError } from '/imports/ui/helpers/alerts.js';
@@ -77,6 +78,44 @@ class LoginForm extends Component {
     });
   }
 
+  onLoginWithGoogle(e) {
+    e.preventDefault();
+    Meteor.loginWithGoogle({
+      requestPermissions: [],
+    }, (error) => {
+      if (error) {
+        showError(error.message);
+      }
+    });
+  }
+
+  renderLoginWithServices() {
+    if (this.props.loginServicesConfigured) {
+      return (
+        <div className="row center-align">
+          <div className="col s12 m6">
+            <button
+              className="waves-effect waves-light btn blue"
+              onClick={(e) => { this.onLoginWithFacebook(e); }}
+            >
+              Login with Facebook
+            </button>
+          </div>
+          <div className="col s12 m6">
+            <button
+              className="waves-effect waves-light btn red"
+              onClick={(e) => { this.onLoginWithGoogle(e); }}
+            >
+              Login with Google
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return null;
+  }
+
   render() {
     if (this.props.loggedIn === true) {
       return (
@@ -143,17 +182,7 @@ class LoginForm extends Component {
               </button>
             </div>
           </div>
-          <div className="row center-align">
-            <div className="col s12 m6">
-              <button
-                className="waves-effect waves-light btn blue"
-                onClick={(e) => { this.onLoginWithFacebook(e); }}
-              >
-                Login with Facebook
-              </button>
-            </div>
-            <div className="col s12 m6"></div>
-          </div>
+          {this.renderLoginWithServices()}
         </form>
       </div>
     );
@@ -163,7 +192,11 @@ class LoginForm extends Component {
 export default withTracker((props) => {
   const returnObj = {
     loggedIn: false,
+    loginServicesConfigured: false,
   };
+
+  returnObj.loginServicesConfigured = Accounts.loginServicesConfigured();
+
   // prevent problem with server-render
   if (Meteor.isServer) {
     return returnObj;

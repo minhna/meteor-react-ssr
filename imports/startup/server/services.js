@@ -7,8 +7,18 @@ Meteor.startup(function() {
     {
       $set: {
         loginStyle: 'popup',
-        appId: '1067602116715609', // See table below for correct property name!
-        secret: '02d12897bf2f9797ede0f48a15b942e8',
+        appId: 'THE_APP_ID', // See table below for correct property name!
+        secret: 'THE_KEY',
+      },
+    },
+  );
+  ServiceConfiguration.configurations.upsert(
+    { service: 'google' },
+    {
+      $set: {
+        loginStyle: 'popup',
+        clientId: 'THE_CLIENT_ID', // See table below for correct property name!
+        secret: 'SOME_KEY',
       },
     },
   );

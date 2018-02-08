@@ -27,3 +27,5 @@ accounts-password
 email
 service-configuration
 accounts-facebook
+accounts-google
+bozhao:link-accounts
