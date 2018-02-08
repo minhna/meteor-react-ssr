@@ -7,7 +7,7 @@
     "pretest": "npm run lint --silent"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.38",
+    "@babel/runtime": "^7.0.0-beta.39",
     "autoprefixer": "^7.2.5",
     "babel-runtime": "^6.26.0",
     "bcrypt": "^1.0.3",
@@ -25,18 +25,18 @@
     "react-loadable": "^5.3.1",
     "react-router-dom": "^4.2.2",
     "react-s-alert": "^1.4.1",
-    "simpl-schema": "^1.4.1"
+    "simpl-schema": "^1.4.2"
   },
   "devDependencies": {
     "@meteorjs/eslint-config-meteor": "^1.0.5",
     "babel-eslint": "^8.2.1",
-    "eslint": "^4.16.0",
+    "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-meteor": "^0.4.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-meteor": "^4.1.6",
-    "eslint-plugin-react": "^7.6.0"
+    "eslint-plugin-react": "^7.6.1"
   },
   "postcss": {
     "plugins": {
