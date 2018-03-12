@@ -8,6 +8,10 @@ import { getIndexes, explainQuery } from '/imports/helpers/server/explainQuery.j
 
 import Tests from '../tests.js';
 
+Meteor.publish('tests.all', function () {
+  return Tests.find({});
+});
+
 Meteor.publish('tests.mine', function () {
   if (!this.userId) {
     return this.ready();
@@ -28,7 +32,7 @@ Meteor.publish('tests.mine', function () {
   return Tests.find(query, options);
 });
 
-Meteor.publish('tests.mine.noreactive', function () {
+Meteor.publish('tests.mine.noReactive', function () {
   if (!this.userId) {
     return this.ready();
   }

@@ -7,18 +7,12 @@ Tests.schema = new SimpleSchema({
   createdAt: {
     type: String,
     label: 'The date this document was created.',
-    autoValue() {
-      if (this.isInsert) return (new Date()).toISOString();
-      return null;
-    },
+    optional: true,
   },
   updatedAt: {
     type: String,
     label: 'The date this document was last updated.',
-    autoValue() {
-      if (this.isInsert || this.isUpdate) return (new Date()).toISOString();
-      return null;
-    },
+    optional: true,
   },
   title: {
     type: String,
@@ -32,10 +26,12 @@ Tests.schema = new SimpleSchema({
     type: Array,
     label: 'Users who have favorited this document.',
     defaultValue: [],
+    optional: true,
   },
   'favorites.$': {
     type: String,
     label: 'A user who has favorited this document.',
+    optional: true,
   },
 });
 

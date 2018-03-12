@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderToNodeStream } from 'react-dom/server';
+import { renderToNodeStream, renderToString } from 'react-dom/server';
 import { onPageLoad } from 'meteor/server-render';
 import { StaticRouter } from 'react-router';
 import { Helmet } from 'react-helmet';
@@ -17,7 +17,8 @@ onPageLoad(async (sink) => {
   );
 
   const modules = [];
-  const html = renderToNodeStream((
+  // const html = renderToNodeStream((
+  const html = renderToString((
     <Loadable.Capture report={(moduleName) => { modules.push(moduleName); }}>
       <App location={sink.request.url} />
     </Loadable.Capture>
