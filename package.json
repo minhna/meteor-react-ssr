@@ -2,7 +2,7 @@
   "name": "server-render",
   "private": true,
   "scripts": {
-    "start": "meteor run",
+    "start": "meteor run --port=3400",
     "lint": "eslint .",
     "pretest": "npm run lint --silent"
   },
