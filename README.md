@@ -1,7 +1,7 @@
 # meteor-react-ssr
 kind of boilerplate 
 
-* meteor 1.6
+* meteor 1.7
 * react router v4
 * server side render
 * react-loadable - component based code splitting
