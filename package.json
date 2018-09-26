@@ -7,12 +7,12 @@
     "pretest": "npm run lint --silent"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-rc.2",
+    "@babel/runtime": "^7.0.0",
     "autoprefixer": "^7.2.6",
     "babel-runtime": "^6.26.0",
-    "bcrypt": "^3.0.0",
+    "bcrypt": "^3.0.1",
     "history": "^4.7.2",
-    "materialize-css": "^1.0.0-rc.2",
+    "materialize-css": "^1.0.0",
     "meteor-node-stubs": "^0.3.3",
     "moment": "^2.22.2",
     "postcss-easy-import": "^3.0.0",
@@ -20,8 +20,8 @@
     "postcss-nested": "^3.0.0",
     "postcss-scss": "^1.0.6",
     "postcss-simple-vars": "^4.1.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^4.3.1",
@@ -31,12 +31,12 @@
   "devDependencies": {
     "@meteorjs/eslint-config-meteor": "^1.0.5",
     "babel-eslint": "^8.2.6",
-    "eslint": "^5.4.0",
+    "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-import-resolver-meteor": "^0.4.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-meteor": "^5.0.0",
+    "eslint-plugin-meteor": "^5.1.0",
     "eslint-plugin-react": "^7.11.1"
   },
   "postcss": {
